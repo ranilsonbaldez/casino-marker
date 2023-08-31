@@ -77,4 +77,5 @@ body {
 
 .option {
   cursor: pointer;
+  transition: background-color 0.5s;
 }
