@@ -1,16 +1,15 @@
-  function dualColors(event) {
-    let pixelSelected = event.target;
-    console.log(pixelSelected);
+const pixels = document.querySelectorAll(".option");
+const colors = ["white", "orange", "red"];
+const pixelsStates = Array.from({ length: pixels.length }, () => 0);
 
-    if (pixelSelected.style.backgroundColor == "transparent"){
-        pixelSelected.style.backgroundColor = "#FF0000"
-        
-
-    } else {
-        pixelSelected.style.backgroundColor = "transparent"
-    }
-}
-
+pixels.forEach((pixel, index) => {
+    pixel.style.backgroundColor = colors[pixelsStates[index]];
+    
+    pixel.addEventListener("click", () => {
+        pixelsStates[index] = (pixelsStates[index] + 1) % colors.length;
+        pixel.style.backgroundColor = colors[pixelsStates[index]];
+    });
+});
 
 function recarregarAPagina(){
     window.location.reload();
