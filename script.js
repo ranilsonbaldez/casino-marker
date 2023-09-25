@@ -1,5 +1,5 @@
 const pixels = document.querySelectorAll(".option");
-const colors = ["white", "orange", "red"];
+const colors = ["white", "orange"];
 const pixelsStates = Array.from({ length: pixels.length }, () => 0);
 
 pixels.forEach((pixel, index) => {
