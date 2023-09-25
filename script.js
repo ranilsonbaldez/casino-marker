@@ -1,13 +1,13 @@
 const pixels = document.querySelectorAll(".option");
-const colors = ["white", "orange"];
-const pixelsStates = Array.from({ length: pixels.length }, () => 0);
+const colors = ["white", "orange", "red"];
 
 pixels.forEach((pixel, index) => {
-    pixel.style.backgroundColor = colors[pixelsStates[index]];
+    let state = 0;  // Estado inicial
+    pixel.style.backgroundColor = colors[state];
     
     pixel.addEventListener("click", () => {
-        pixelsStates[index] = (pixelsStates[index] + 1) % colors.length;
-        pixel.style.backgroundColor = colors[pixelsStates[index]];
+        state = (state + 1) % colors.length;
+        pixel.style.backgroundColor = colors[state];
     });
 });
 
